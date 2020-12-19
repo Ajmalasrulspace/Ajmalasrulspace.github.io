@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Ajmal Gallery Space</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {
+  background-image: url('Image/wall.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+
+</style>
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+p.groove {
+  
+  background-color: white;
+  border-style: groove;
+  border-color:#D9D9D9 ;
+  border-width:20px;
+  border-radius: 5px;
+  font-family:Verdana;
+}
+
+p.solid{
+  
+  background-color: white;
+  border-style: solid;
+  border-color:gold ;
+  border-width:15px;
+  height: 1opx;
+  width: 40%;
+  font-family:Arial;
+  color:black ;
+
+}
+
+body {
+  margin: 0px;
+}
+
+/* rcorner3 */
+.header {
+  background-color:#DBC443;
+  padding:15px;
+  text-align: center;
+  
+}
+
+h2 {
+    text-align:center;
+    text-indent:50px;
+}
+
+
+
+p {
+  font-family:helvetica;
+  text-align:left;
+  text-indent: 20px;
+  word-spacing: 5px;
+  font-size:15px;
+}
+
+img {
+     border: 6px solid #4d4d4d;
+     margin-left:90px;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: black;
+}
+
+
+.topnav a {
+  float: left;
+  display: block;
+  color:white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+
+.topnav a:hover {
+  background-color: #DBC443 ;
+  color: black;
+}
+
+
+.topnav a.active {
+  background-color: grey;
+  color: white;
+}
+
+
+.topnav input[type=text] {
+  float: right;
+  padding: 6px;
+  border: none;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+  font-family: "lucida console";
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a, .topnav input[type=text] {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .topnav input[type=text] {
+    border: 1px solid #ccc;
+  }
+</style>
+<style>
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color:red;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+</style>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+</style>
+</head>
+<body>
+<div class="header">
+<h2 style="color: black;font-family:Helvetica;class=small-caps;font-style:italic; font-size: 40px;">Gallery<sub>Space</sub></h2><center>
+<p style ="text-align:center;  font-size: 25px; "class="groove">Memories </p>
+</div>
+<div class="topnav">
+  <a href="index.html">Home</a>
+  <a href="biodata.html">Biodata</a>
+  <a  href="experience.html">Experience</a>
+  <a href="education.html">Education</a>
+  <a href="family.html">Family</a>
+  <a href="passion.html">Passion</a>
+   <a class="active href="#home">Gallery</a>
+    <a href="socialmedia.html">Social Media</a>
+</div>
+<br>
+<br>
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 3</div>
+  <img src="Image/Gallery/friends/sunset.jpg" style="margin-left:0px;margin-right:0px;width:100%;heigth-max:80%;">
+  <div class="text">Sunset</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3</div>
+  <img src="Image/Gallery/friends/pano2.jpg" style="margin-left:0px;margin-right:0px;width:100%;heigth-max:80%;">
+  <div class="text">Panorama </div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <img src="Image/Gallery/friends/classmate.jpg" style="margin-left:0px;margin-right:0px;width:100%;heigth-max:80%;">
+  <div class="text">Classmate</div>
+</div>
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+<br>
+<h2 style="color: black;font-family:Helvetica;class=small-caps;font-style:italic; font-size: 40px;text-align:center;">Ajmal Hallway</h2>
+<p style="text-align:center;font-size:30px;font-family:arial;">This is for my selected photos is kept and as the remembrance
+<br> of the past event</p>
+<br>
+<h2 style="color:red ;font-family:Verdana;class=small-caps;font-style:italic; font-size: 40px;text-align:center;">Myself</h2>
+<div class="row">
+  <div class="column">
+    <img src="Image/Gallery/myselfgal/my1.jpg" alt="Snow" style=" width="360" height="300">
+<center><caption>2018<caption><center>
+  </div>
+  <div class="column">
+      <img src="Image/Gallery/myselfgal/my2.jpg" alt="Snow" style=width="400" height="300">
+ <center><caption>2018<caption><center>
+  </div>
+  <div class="column">
+     <img src="Image/Gallery/myselfgal/my3.jpg" alt="Snow" style=width="400" height="300">
+ <center><caption>2018<caption><center>
+</div>
+  <div class="column">
+    <img src="Image/Gallery/myselfgal/my5.jpeg" alt="Snow" style=" width="400" height="300">
+<center><caption>2019<caption><center>
+  </div>
+  <div class="column">
+      <img src="Image/Gallery/myselfgal/my6.jpg" alt="Snow" style=width="400" height="300">
+ <center><caption>2016<caption><center>
+  </div>
+  <div class="column">
+     <img src="Image/Gallery/myselfgal/my7.jpg" alt="Snow" style=width="400" height="300">
+ <center><caption>2017<caption><center>
+</div>
+  <div class="column">
+    <img src="Image/Gallery/myselfgal/my10.jpg" alt="Snow" style=" width="400" height="300">
+<center><caption>2017<caption><center>
+  </div>
+  <div class="column">
+      <img src="Image/Gallery/myselfgal/my13.jpg" alt="Snow" style=width="400" height="300">
+ <center><caption>2019<caption><center>
+  </div>
+  <div class="column">
+     <img src="Image/Gallery/myselfgal/my15.jpg" alt="Snow" style=width="400" height="300">
+ <center><caption>2016<caption><center>
+</div>
+  <div class="column">
+    <img src="Image/Gallery/myselfgal/my17.jpg" alt="Snow" style=" width="400" height="300">
+<center><caption>2020<caption><center>
+  </div>
+  <div class="column">
+      <img src="Image/Gallery/myselfgal/my19.jpg" alt="Snow" style=width="400" height="300">
+ <center><caption>2020<caption><center>
+  </div>
+  <div class="column">
+     <img src="Image/Gallery/myselfgal/my20.jpg" alt="Snow" style=width="400" height="300">
+ <center><caption>2017<caption><center>
+</div>
+  <div class="column">
+    <img src="Image/Gallery/myselfgal/indexpic.jpg" alt="Snow" style=" width="400" height="300">
+<center><caption>2020<caption><center>
+  </div>
+  <div class="column">
+      <img src="Image/Gallery/myselfgal/my21.jpg" alt="Snow" style=width="400" height="300">
+ <center><caption>2020<caption><center>
+  </div>
+  <div class="column">
+     <img src="Image/Gallery/myselfgal/my22.jpg" alt="Snow" style=width="400" height="300">
+ <center><caption>2020<caption><center>
+</div>
+</div>
+<br>
+<br>
+<hr>
+<br>
+<div>
+<br>
+<h2 style="color:red ;font-family:Verdana;class=small-caps;font-style:italic; font-size: 40px;text-align:center;">My Family</h2>
+<div class="row">
+  <div class="column">
+    <img src="Image/Gallery/Families/father.jpg" alt="Snow" style=" width="360" height="300">
+<center><caption>Dad<caption><center>
+  </div>
+  <div class="column">
+      <img src="Image/Gallery/Families/mother.jpg" alt="Snow" style=width="400" height="300">
+ <center><caption>Mom<caption><center>
+  </div>
+  <div class="column">
+     <img src="Image/Gallery/Families/parents.jpg" alt="Snow" style=width="400" height="300">
+ <center><caption>My parents<caption><center>
+</div>
+  <div class="column">
+    <img src="Image/Gallery/Families/sisters.jpg" alt="Snow" style=" width="400" height="300">
+<center><caption>Sisters<caption><center>
+</div>
+  <div class="column">
+    <img src="Image/Gallery/cats/carli.jpg" alt="Snow" style=" width="400" height="300">
+<center><caption>Charlie<caption><center>
+</div>
+ <div class="column">
+     <img src="Image/Gallery/cats/Timone.jpg" alt="Snow" style=width="400" height="300">
+ <center><caption>Timones<caption><center>
+</div>
+  <div class="column">
+    <img src="Image/Gallery/cats/lulu.jpg" alt="Snow" style=" width="400" height="300">
+<center><caption>Lulu<caption><center>
+</div>
+  <div class="column">
+    <img src="Image/Gallery/cats/Messi.jpg" alt="Snow" style=" width="400" height="300">
+<center><caption>Messi<caption><center>
+</div>
+ <div class="column">
+    <img src="Image/Gallery/cats/ronl.jpg" alt="Snow" style=" width="400" height="300">
+<center><caption>Ronal<caption><center>
+</div>
+<br>
+<br>
+<br>
+<hr>
+<br>
+<br>
+<div>
+<br>
+<h2 style="color:red ;font-family:Verdana;class=small-caps;font-style:italic; font-size: 40px;text-align:center;">Mobilegraphy</h2>
+<div class="row">
+  <div class="column">
+    <img src="Image/Gallery/mobilegraphy/crab.jpg" alt="Snow" style=" width="360" height="300">
+<center><caption>Baby Crab<caption><center>
+  </div>
+  <div class="column">
+      <img src="Image/Gallery/mobilegraphy/flo3.jpg" alt="Snow" style=width="400" height="300">
+ <center><caption>Eye-catching Bright Color<caption><center>
+  </div>
+  <div class="column">
+     <img src="Image/Gallery/mobilegraphy/leav1.jpg" alt="Snow" style=width="400" height="300">
+ <center><caption>The Leaf<caption><center>
+</div>
+  <div class="column">
+    <img src="Image/Gallery/mobilegraphy/shrimp.jpg" alt="Snow" style=" width="400" height="300">
+<center><caption>Beautiful Sea Creatures<caption><center>
+</div>
+ <div class="column">
+    <img src="Image/Gallery/mobilegraphy/microflo.jpg" alt="Snow" style=" width="350" height="300">
+<center><caption>Micro Focus Details<caption><center>
+</div>
+ <div class="column">
+    <img src="Image/Gallery/mobilegraphy/microflo2.jpg" alt="Snow" style=" width="400" height="300">
+<center><caption>Sunny and Bright <caption><center>
+</div>
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+    </div>
+</div>
+<br>
+<hr>
+<br>
+
+<footer>
+ <center> <span style=font-family:helvetica;">This website is developed and authored by Muhammad Ajmal Bin Asrul &#169;<br> IMD311(INTRODUCTION TO WEB CONTENT MANAGEMENTS AND DESIGN</p>
+</footer>
+</body>
+</html> 

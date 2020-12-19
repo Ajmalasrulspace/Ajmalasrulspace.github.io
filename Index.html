@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Ajmal Personal Space</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="./style.css">
+
+<style>
+body {
+  background-image: url('Image/wall.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+</style>
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+p.groove {
+  
+  background-color: white;
+  border-style: groove;
+  border-color:#D9D9D9 ;
+  border-width:20px;
+  border-radius: 5px;
+  font-family:Verdana;
+}
+
+p.solid{
+  
+  background-color: white;
+  border-style: solid;
+  border-color:gold ;
+  border-width:15px;
+  height: 1opx;
+  width: 40%;
+  font-family:Arial;
+  color:black ;
+
+}
+
+body {
+  margin: 0px;
+}
+
+/* rcorner3 */
+.header {
+  background: url('./Image/emptywood.jpg');
+  background-size: cover;
+  padding:15px;
+  text-align: center;
+}
+
+h2 {
+    text-align:center;
+
+}
+
+p {
+    text-align:center;
+    font-size:25px;
+    font-family: "arial";
+}
+
+img {
+    border-radius: 40%;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: black;
+}
+ 
+.topnav a {
+  float: left;
+  display: block;
+  color:white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #DBC443;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: grey;
+  color: white;
+}
+
+
+.topnav .search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 70px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.topnav .search-container button:hover {
+  background: red;
+}
+.topnav input[type=text] {
+  float: right;
+  padding: 6px;
+  border: none;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+  font-family: "lucida console";
+}
+
+/* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
+@media screen and (max-width: 600px) {
+  .topnav a, .topnav input[type=text] {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .topnav input[type=text] {
+    border: 1px solid #ccc;
+  }
+</style>
+ <style>
+        .tabBlock
+        {
+            background-color:#D9D9D9 ;
+            border:solid 0px red;
+            border-radius:2px; -moz-border-radius:2px; -webkit-border-radius:2px;
+            max-width:200px;
+            width:60%;
+            overflow:hidden;
+            display:block;
+        }
+        .clock
+        {
+            vertical-align:middle;
+            font-family:Orbitron;
+            font-size:40px;
+            font-weight:normal;
+            color:#DBC443;
+            padding:0 5px;
+        }
+        .clocklg 
+        {
+            vertical-align:middle; 
+            font-family:Orbitron;
+            font-size:15px;
+            font-weight:normal;
+            color:#DBC443;
+        }
+</style>
+</head>
+<body>
+<div class="header">
+<h1 style="color: white;font-family:Helvetica;class=small-caps;font-style:italic; font-size: 40px;">Ajmal Asrul <sup>Space</sup></h1>
+<p style ="text-align:center;  font-size: 25px; "class="groove">Home Page</p>
+</div>
+<div class="topnav">
+   <a class="active" href="#home">Home</a>
+  <a href="biodata.html">Biodata</a>
+  <a href="experience.html">Experience</a>
+  <a href="education.html">Education</a>
+  <a href="family.html">Family</a>
+  <a href="passion.html">Passion</a>
+   <a href="gallery.html">Gallery</a>
+    <a href="socialmedia.html">Social Media</a>
+</div>
+<!-- ON LOAD OF THE PAGE, THE CLOCK WILL START TICKING. -->
+<body onload="digitized();">
+    <div style="background-color:red;
+        max-width:220px;width:100%;margin-left:730px;padding:1px;">
+
+        <table class="tabBlock" align="center" cellspacing="0" cellpadding="0" border="0">
+            <tr><td class="clock" id="dc"></td>  <!-- THE DIGITAL CLOCK. -->
+                <td>
+                    <table cellpadding="0" cellspacing="0" border="0">
+                    
+                        <!-- HOUR IN 'AM' AND 'PM'. -->
+                        <tr><td class="clocklg" id="dc_hour"></td></tr>
+
+                        <!-- SHOWING SECONDS. -->
+                        <tr><td class="clocklg" id="dc_second"></td></tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+<script>
+    // OUR FUNCTION WHICH IS EXECUTED ON LOAD OF THE PAGE.
+    function digitized() {
+        var dt = new Date();    // DATE() CONSTRUCTOR FOR CURRENT SYSTEM DATE AND TIME.
+        var hrs = dt.getHours();
+        var min = dt.getMinutes();
+        var sec = dt.getSeconds();
+
+        min = Ticking(min);
+        sec = Ticking(sec);
+
+        document.getElementById('dc').innerHTML = hrs + ":" + min;
+        document.getElementById('dc_second').innerHTML = sec;
+
+        if (hrs > 12) { 
+            document.getElementById('dc_hour').innerHTML = 'PM'; 
+        }
+        else { 
+            document.getElementById('dc_hour').innerHTML = 'AM'; 
+        }
+
+        // CALL THE FUNCTION EVERY 1 SECOND (RECURSION).
+        var time
+        time = setInterval('digitized()', 1000);
+    }
+
+    function Ticking(ticVal) {
+        if (ticVal < 10) {
+            ticVal = "0" + ticVal;
+        }
+        return ticVal;
+    }
+</script>
+<br>
+<center><script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/775491/t/2"></script>
+<br>
+<h2><script language="JavaScript1.2">
+
+var message="Welcome to My Space!"
+var neonbasecolor="#4b4b02"
+var neontextcolor="#c7c705"
+var flashspeed=100  //in milliseconds
+
+///No need to edit below this line/////
+
+var n=0
+if (document.all||document.getElementById){
+document.write('<font color="'+neonbasecolor+'">')
+for (m=0;m<message.length;m++)
+document.write('<span id="neonlight'+m+'">'+message.charAt(m)+'</span>')
+document.write('</font>')
+}
+else
+document.write(message)
+
+function crossref(number){
+var crossobj=document.all? eval("document.all.neonlight"+number) : document.getElementById("neonlight"+number)
+return crossobj
+}
+
+function neon(){
+
+//Change all letters to base color
+if (n==0){
+for (m=0;m<message.length;m++)
+//eval("document.all.neonlight"+m).style.color=neonbasecolor
+crossref(m).style.color=neonbasecolor
+}
+
+//cycle through and change individual letters to neon color
+crossref(n).style.color=neontextcolor
+
+if (n<message.length-1)
+n++
+else{
+n=0
+clearInterval(flashing)
+setTimeout("beginneon()",1500)
+return
+}
+}
+
+function beginneon(){
+if (document.all||document.getElementById)
+flashing=setInterval("neon()",flashspeed)
+}
+beginneon()
+</script>
+<hr>
+<embed src="Audio/lovesomeoneguitar.m4a" autostart="true"hidden="true"></embed>
+<h2 style="color: black;font-family:Helvetica;class=small-caps;font-style:italic; font-size: 40px;text-align:middle;">Know Me </h2>
+<center><img src="image/Myself/my8.jpg" alt="my8"  border="2";height=300px width=300px";><center>
+<dv> <p style="text-align:center;font-size: 40px;">I’m Ajmal. How are you? Nice to know you</p>
+     <p style="text-align:center;font-size: 40px;">This webpages is  literally include about my background,my family and 
+<br>anything that related to me.Also, i put in my experiences of events that have impacts on my life.Not just that i also shares a little  about what i like and loves to do. 
+<br>I'm currently  in <b>Diploma courses of (Information Management IM 110)</b>by the Faculty Of Information Management .I'm  student of  Universiti Teknologi MARA(UiTM)  Merbok ,Kedah.
+<br>This website pages is a task for the individual assessment  of <b>Introduction  To Web  Contents Managements And Design IMD311 subject</b>. 
+ </p>
+     <p style="text-align:center;font-size: 40px;">Hope you enjoys to explore!!</p>
+<br>
+<br>
+<br>
+<br>
+<p style ="text-align:center;  font-size: 25px;font-family:Monolite; "class="solid">What the updates  on this week?&#10024</p>
+<video width="600" height="350" controls>
+<source src="video/walkvid.mp4" type="video/mp4">
+</video>
+<p> <span style="border: 20px double black;font-family:helvetica;">Village Walk Video</span> </p>
+<br>
+<br>
+<br>
+<p> <span style="border: 20px double black;padding:5px; "><b> Picked songs of the week </b></span> </p>
+
+<br>
+
+<br>
+<center> <a href="/udio/Thundercloud.mp3" target="_blank"><button style="background-color:red; border-color:gold; color:white">ThunderCloud-LSD & Sia</button></a></center>
+<br>
+<center><a href="Audio/badliar.mp3" target="_blank"><button style="background-color:red; border-color:gold; color:white">Bad Liar-Imagine Dragon</button></a></center>
+<br>
+<center><a href="Audio/itsyou.mp3" target="_blank"><button style="background-color:red; border-color:gold; color:white">Its you-Ali Gatie</button></a></center>
+<br>
+<center><a href="Audio/intheend.mp3" target="_blank"><button style="background-color:red; border-color:gold; color:white">In the end - Linkin Park </button></a></center>
+<br>
+<center><a href="Audio/rewritethestar.mp3" target="_blank"><button style="background-color:red; border-color:gold; color:white">Rewrite The Star-Zac Efron & Zendaya</button></a></center>
+<br>
+<center><a href="Audio/trampoline.mp3" target="_blank"><button style="background-color:red; border-color:gold; color: white">Trampoline-Shaed & Zayn Malik</button></a></center>
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+<hr>
+
+ <footer>
+ <center> <span style=font-family:helvetica;">This website is developed and authored by Muhammad Ajmal Bin Asrul &#169;<br> IMD311(INTRODUCTION TO WEB CONTENT MANAGEMENTS AND DESIGN)</p>
+  
+</footer>
+
+</body>
+</html>
